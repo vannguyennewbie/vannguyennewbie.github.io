@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Máy Tính Biểu Thức</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #1e1e1e;
+      color: #fff;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    input {
+      background: #333;
+      color: #fff;
+    }
+    button {
+      background: #00cc66;
+      color: #fff;
+      cursor: pointer;
+    }
+    #result {
+      font-size: 20px;
+      padding: 10px;
+      background: #222;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🧮 Nhập phép tính:</h2>
+
+  <input type="text" id="expression" placeholder="Ví dụ: (12+45-3)/2">
+
+  <button onclick="calculate()">Tính</button>
+
+  <div id="result">👉 Kết quả sẽ hiện ở đây</div>
+
+  <script>
+    function calculate() {
+      const expr = document.getElementById('expression').value;
+      try {
+        // Tính toán biểu thức
+        const result = Function('"use strict"; return (' + expr + ')')();
+        document.getElementById('result').innerText = `✅ Kết quả: ${result}`;
+      } catch (error) {
+        document.getElementById('result').innerText = '❌ Biểu thức không hợp lệ.';
+      }
+    }
+  </script>
+
+</body>
+</html>
