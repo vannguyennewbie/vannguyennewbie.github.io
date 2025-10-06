@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Web của Nguyên hehe</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #a2d2ff, #ffafcc);
+      color: #222;
+      font-family: "Segoe UI", sans-serif;
+      text-align: center;
+      padding: 30px;
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      color: #fff;
+      text-shadow: 2px 2px 6px #000;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #fff, 0 0 10px #f4a261, 0 0 20px #e76f51; }
+      to { text-shadow: 0 0 15px #ffe066, 0 0 30px #f77f00, 0 0 45px #d62828; }
+    }
+
+    .box {
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 70%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      animation: slideUp 1.2s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h2 {
+      color: #0077b6;
+      border-bottom: 2px solid #0077b6;
+      padding-bottom: 5px;
+    }
+
+    pre {
+      text-align: left;
+      background: #222;
+      color: #0f0;
+      padding: 10px;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #fff;
+      font-style: italic;
+      animation: fadeIn 3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <h1>Chào mừng đến với Web của Nguyên hehe 😎</h1>
+
+  <div class="box">
+    <h2>🔢 Dạng 1: Bài tập Số học C++</h2>
+    <pre>
+📘 Ví dụ: Kiểm tra số nguyên tố
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+bool ktra(int x){
+    if(x&lt;2) return false;
+    for(int i=2;i&lt;=sqrt(x);i++)
+        if(x%i==0) return false;
+    return true;
+}
+int main(){
+    int n; cin&gt;&gt;n;
+    cout &lt;&lt; (ktra(n) ? "YES" : "NO");
+}
+    </pre>
+  </div>
+
+  <div class="box">
+    <h2>📊 Dạng 2: Bài tập Mảng</h2>
+    <pre>
+📘 Ví dụ: Đếm số chẵn trong mảng
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+    int n,a[1000]; cin&gt;&gt;n;
+    int dem=0;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;a[i];
+        if(a[i]%2==0) dem++;
+    }
+    cout&lt;&lt;dem;
+}
+    </pre>
+  </div>
+
+  <div class="box">
+    <h2>🔤 Dạng 3: Bài tập Xâu ký tự</h2>
+    <pre>
+📘 Ví dụ: Đếm số nguyên âm trong chuỗi
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+    string s; getline(cin,s);
+    int d=0;
+    for(char c:s)
+        if(string("aeiouAEIOU").find(c)!=string::npos)
+            d++;
+    cout&lt;&lt;d;
+}
+    </pre>
+  </div>
+
+  <footer>
+    💻 Trang web được tạo bởi Nguyễn Văn Nguyên — Lớp 9C, Võ Thị Sáu ❤️
+  </footer>
+
+  <script>
+    // Hiệu ứng hiện chữ từng ký tự
+    const title = document.querySelector("h1");
+    const text = title.textContent;
+    title.textContent = "";
+    let i = 0;
+    function typing() {
+      if (i < text.length) {
+        title.textContent += text.charAt(i);
+        i++;
+        setTimeout(typing, 100);
+      }
+    }
+    typing();
+  </script>
+</body>
+</html>
