@@ -1,147 +1,234 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Web của Nguyên hehe</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Của Nguyên Hehe - Luyện C++ Tổng Hợp</title>
+<style>
     body {
-      background: linear-gradient(135deg, #a2d2ff, #ffafcc);
-      color: #222;
-      font-family: "Segoe UI", sans-serif;
-      text-align: center;
-      padding: 30px;
-      animation: fadeIn 2s ease;
+        background-color: #0d1117;
+        color: #c9d1d9;
+        font-family: Consolas, monospace;
+        margin: 0;
+        padding: 0;
     }
-
+    header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #161b22;
+        padding: 10px 20px;
+        box-shadow: 0 0 15px #00ff7f;
+    }
+    .logo {
+        color: #00ff7f;
+        font-size: 28px;
+        font-weight: bold;
+        text-shadow: 0 0 10px #00ff7f;
+    }
     h1 {
-      color: #fff;
-      text-shadow: 2px 2px 6px #000;
-      animation: glow 2s infinite alternate;
+        color: #00ff7f;
+        text-align: center;
+        text-shadow: 0 0 15px #00ff7f;
+        margin-top: 20px;
     }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 5px #fff, 0 0 10px #f4a261, 0 0 20px #e76f51; }
-      to { text-shadow: 0 0 15px #ffe066, 0 0 30px #f77f00, 0 0 45px #d62828; }
+    .exercise {
+        background-color: #161b22;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 15px auto;
+        width: 90%;
+        transition: 0.3s;
+        box-shadow: 0 0 10px #00ff7f33;
     }
-
-    .box {
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 20px;
-      padding: 20px;
-      margin: 20px auto;
-      width: 70%;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      animation: slideUp 1.2s ease;
+    .exercise:hover {
+        box-shadow: 0 0 20px #00ff7f88;
     }
-
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    .title {
+        color: #00ff7f;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
     }
-
-    h2 {
-      color: #0077b6;
-      border-bottom: 2px solid #0077b6;
-      padding-bottom: 5px;
+    .content {
+        display: none;
+        margin-top: 10px;
     }
-
-    pre {
-      text-align: left;
-      background: #222;
-      color: #0f0;
-      padding: 10px;
-      border-radius: 10px;
-      overflow-x: auto;
+    textarea {
+        width: 100%;
+        height: 150px;
+        background-color: #0d1117;
+        color: #00ff7f;
+        border: 1px solid #00ff7f;
+        border-radius: 5px;
+        padding: 10px;
+        resize: none;
     }
-
-    footer {
-      margin-top: 40px;
-      color: #fff;
-      font-style: italic;
-      animation: fadeIn 3s ease;
+    button {
+        background-color: #00ff7f;
+        color: #0d1117;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 10px;
     }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+    button:hover {
+        background-color: #00cc66;
+        box-shadow: 0 0 10px #00ff7f;
     }
-  </style>
+    .result {
+        margin-top: 8px;
+        font-weight: bold;
+    }
+    .solution {
+        margin-top: 10px;
+        background-color: #0d1117;
+        border-left: 3px solid #00ff7f;
+        padding: 8px;
+        display: none;
+        color: #c9d1d9;
+        font-size: 14px;
+    }
+    .show-solution {
+        color: #00ff7f;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+</style>
 </head>
 <body>
-  <h1>Chào mừng đến với Web của Nguyên hehe 😎</h1>
 
-  <div class="box">
-    <h2>🔢 Dạng 1: Bài tập Số học C++</h2>
-    <pre>
-📘 Ví dụ: Kiểm tra số nguyên tố
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-bool ktra(int x){
-    if(x&lt;2) return false;
-    for(int i=2;i&lt;=sqrt(x);i++)
-        if(x%i==0) return false;
-    return true;
-}
-int main(){
-    int n; cin&gt;&gt;n;
-    cout &lt;&lt; (ktra(n) ? "YES" : "NO");
-}
-    </pre>
-  </div>
+<header>
+    <div class="logo">C++</div>
+    <div style="font-size:20px;">💻 Web Của Nguyên Hehe - Luyện C++ Tổng Hợp</div>
+</header>
 
-  <div class="box">
-    <h2>📊 Dạng 2: Bài tập Mảng</h2>
-    <pre>
-📘 Ví dụ: Đếm số chẵn trong mảng
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-int main(){
-    int n,a[1000]; cin&gt;&gt;n;
-    int dem=0;
-    for(int i=0;i&lt;n;i++){
-        cin&gt;&gt;a[i];
-        if(a[i]%2==0) dem++;
+<h1>🔥 Bộ Đề 15 Bài Tập Luyện C++ - Từ Cơ Bản Đến Nâng Cao 🔥</h1>
+
+<div id="exercises"></div>
+
+<script>
+const data = [
+    {title:"Bài 1 - Tính tổng chữ số của n", 
+     problem:"Nhập số nguyên n. Tính tổng các chữ số của n.",
+     solution:`int n, s=0; cin>>n; while(n){ s+=n%10; n/=10; } cout<<s;`,
+     check: code => code.includes("while") && code.includes("%10")
+    },
+    {title:"Bài 2 - Ước và bội chung nhỏ nhất", 
+     problem:"Nhập hai số a,b. In ra UCLN và BCNN của chúng.",
+     solution:`int a,b; cin>>a>>b; int g=gcd(a,b); cout<<g<<" "<<a*b/g;`,
+     check: code => code.includes("gcd") || code.includes("a*b")
+    },
+    {title:"Bài 3 - Đếm số chia hết cho 3 nhưng không chia hết cho 9", 
+     problem:"Nhập n, đếm các số từ 1..n chia hết cho 3 nhưng không chia hết cho 9.",
+     solution:`int n;cin>>n;int d=0;for(int i=1;i<=n;i++)if(i%3==0&&i%9!=0)d++;cout<<d;`,
+     check: code => code.includes("%3") && code.includes("%9")
+    },
+    {title:"Bài 4 - Tính tổng phần tử chẵn trong mảng",
+     problem:"Nhập n và mảng a. Tính tổng các phần tử chẵn.",
+     solution:`int n,s=0;cin>>n;int a[n];for(int i=0;i<n;i++){cin>>a[i];if(a[i]%2==0)s+=a[i];}cout<<s;`,
+     check: code => code.includes("%2") && code.includes("s+=")
+    },
+    {title:"Bài 5 - Phần tử lớn thứ hai trong mảng",
+     problem:"Tìm phần tử lớn thứ hai trong mảng n phần tử.",
+     solution:`int n;cin>>n;int a[n];for(int i=0;i<n;i++)cin>>a[i];sort(a,a+n);cout<<a[n-2];`,
+     check: code => code.includes("sort") && code.includes("n-2")
+    },
+    {title:"Bài 6 - Xóa phần tử trùng nhau",
+     problem:"Nhập n và mảng a. Xóa phần tử trùng nhau rồi in mảng còn lại.",
+     solution:`int n;cin>>n;vector<int>a(n);for(auto &x:a)cin>>x;sort(a.begin(),a.end());a.erase(unique(a.begin(),a.end()),a.end());for(auto x:a)cout<<x<<" ";`,
+     check: code => code.includes("unique") && code.includes("erase")
+    },
+    {title:"Bài 7 - Đếm số nguyên âm trong xâu",
+     problem:"Nhập xâu s, đếm số nguyên âm (a,e,i,o,u).",
+     solution:`string s;getline(cin,s);int d=0;for(auto c:s)if(string("aeiou").find(c)!=-1)d++;cout<<d;`,
+     check: code => code.includes("aeiou")
+    },
+    {title:"Bài 8 - Đảo ngược chuỗi",
+     problem:"Nhập chuỗi s và in ra chuỗi đảo ngược.",
+     solution:`string s;getline(cin,s);reverse(s.begin(),s.end());cout<<s;`,
+     check: code => code.includes("reverse")
+    },
+    {title:"Bài 9 - Kiểm tra số nguyên tố",
+     problem:"Nhập số n, kiểm tra n có phải số nguyên tố không.",
+     solution:`int n;cin>>n;bool ok=true;if(n<2)ok=false;for(int i=2;i*i<=n;i++)if(n%i==0)ok=false;cout<<(ok?"YES":"NO");`,
+     check: code => code.includes("for") && code.includes("%")
+    },
+    {title:"Bài 10 - Liệt kê số nguyên tố trong đoạn [a,b]",
+     problem:"Nhập a,b. Liệt kê các số nguyên tố trong [a,b].",
+     solution:`int a,b;cin>>a>>b;for(int i=a;i<=b;i++){bool ok=true;if(i<2)ok=false;for(int j=2;j*j<=i;j++)if(i%j==0)ok=false;if(ok)cout<<i<<" ";}`,
+     check: code => code.includes("for") && code.includes("i%j")
+    },
+    {title:"Bài 11 - Kiểm tra số chính phương",
+     problem:"Nhập số n, kiểm tra n có phải số chính phương không.",
+     solution:`int n;cin>>n;int r=sqrt(n);cout<<(r*r==n?"YES":"NO");`,
+     check: code => code.includes("sqrt")
+    },
+    {title:"Bài 12 - Đếm số chính phương nhỏ hơn N",
+     problem:"Nhập N, đếm số chính phương nhỏ hơn hoặc bằng N.",
+     solution:`int n;cin>>n;int d=0;for(int i=1;i*i<=n;i++)d++;cout<<d;`,
+     check: code => code.includes("i*i")
+    },
+    {title:"Bài 13 - Lùa bò vào chuồng (phiên bản 1)",
+     problem:"Cho số bò và số chuồng. Tính số chuồng cần mở thêm để đủ chứa bò.",
+     solution:`int bo,chuong;cin>>bo>>chuong;cout<<max(0,bo-chuong);`,
+     check: code => code.includes("max")
+    },
+    {title:"Bài 14 - Lùa bò vào chuồng (phiên bản 2)",
+     problem:"Cho n bò, mỗi chuồng chứa k bò. Tính số chuồng cần thiết.",
+     solution:`int n,k;cin>>n>>k;cout<<(n+k-1)/k;`,
+     check: code => code.includes("/k")
+    },
+    {title:"Bài 15 - Gom bò về chuồng chính",
+     problem:"Cho n bò ở các vị trí, tính tổng khoảng cách bò cần di chuyển về vị trí 0.",
+     solution:`int n;cin>>n;long long s=0;for(int i=0;i<n;i++){int x;cin>>x;s+=abs(x);}cout<<s;`,
+     check: code => code.includes("abs")
     }
-    cout&lt;&lt;dem;
+];
+
+function createExercises(){
+    const container = document.getElementById("exercises");
+    data.forEach((ex,i)=>{
+        const div=document.createElement("div");
+        div.className="exercise";
+        div.innerHTML=`
+            <div class="title" onclick="toggle(${i})">▶ ${ex.title}</div>
+            <div class="content" id="content${i}">
+                <p><b>💡 Đề bài:</b> ${ex.problem}</p>
+                <textarea id="code${i}" placeholder="// Nhập code C++ của bạn ở đây..."></textarea><br>
+                <button onclick="runCode(${i})">▶ Chạy thử</button>
+                <div class="result" id="result${i}"></div>
+                <div class="show-solution" onclick="showSolution(${i})">Xem lời giải mẫu</div>
+                <div class="solution" id="solution${i}"><pre>${ex.solution}</pre></div>
+            </div>`;
+        container.appendChild(div);
+    });
 }
-    </pre>
-  </div>
+createExercises();
 
-  <div class="box">
-    <h2>🔤 Dạng 3: Bài tập Xâu ký tự</h2>
-    <pre>
-📘 Ví dụ: Đếm số nguyên âm trong chuỗi
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-int main(){
-    string s; getline(cin,s);
-    int d=0;
-    for(char c:s)
-        if(string("aeiouAEIOU").find(c)!=string::npos)
-            d++;
-    cout&lt;&lt;d;
+function toggle(i){
+    const c=document.getElementById(`content${i}`);
+    c.style.display=(c.style.display==="block")?"none":"block";
 }
-    </pre>
-  </div>
-
-  <footer>
-    💻 Trang web được tạo bởi Nguyễn Văn Nguyên — Lớp 9C, Võ Thị Sáu ❤️
-  </footer>
-
-  <script>
-    // Hiệu ứng hiện chữ từng ký tự
-    const title = document.querySelector("h1");
-    const text = title.textContent;
-    title.textContent = "";
-    let i = 0;
-    function typing() {
-      if (i < text.length) {
-        title.textContent += text.charAt(i);
-        i++;
-        setTimeout(typing, 100);
-      }
-    }
-    typing();
-  </script>
+function showSolution(i){
+    const s=document.getElementById(`solution${i}`);
+    s.style.display=(s.style.display==="block")?"none":"block";
+}
+function runCode(i){
+    const res=document.getElementById(`result${i}`);
+    res.innerHTML="⏳ Đang chạy thử...";
+    let start=Date.now();
+    setTimeout(()=>{
+        let end=Date.now();
+        if(end-start>2000){res.innerHTML="⚠️ Time Limit Exceeded (TLE)";return;}
+        const code=document.getElementById(`code${i}`).value;
+        if(data[i].check(code)) res.innerHTML="✅ Chính xác!";
+        else res.innerHTML="❌ Sai rồi, thử lại nhé!";
+    },Math.random()*1500+200);
+}
+</script>
 </body>
 </html>
+
